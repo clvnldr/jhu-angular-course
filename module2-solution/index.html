@@ -32,7 +32,7 @@
     <div class="col-md-6" ng-controller="ToBuyController as toBuy">
      <h2>To Buy:</h2>
      <ul>
-       <li ng-repeat="item in toBuy.list">Buy <input type="text" value="{{item.quantity}}" /> {{ item.name }} <button ng-click="toBuy.addBoughtItem(item)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+       <li ng-repeat="item in toBuy.list">Buy <input type="text" value="{{item.quantity}}" ng-model="item.quantity"/> {{ item.name }} <button ng-click="toBuy.addBoughtItem(item)" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
      <div ng-if="toBuy.list.length === 0" class="emptyMessage">Everything is bought!</div>
     </div>
