@@ -26,11 +26,11 @@ function ShoppingListCheckOffService() {
 
   // list of items to buy
   service.toBuyItems = [
-    { name: "cookies", quantity: 10 },
-    { name: "snickers", quantity: 11 },
-    { name: "bananas", quantity: 15 },
-    { name: "pizzas", quantity: 24 },
-    { name: "bags of chips", quantity: 11 }
+    { name: "cookies", quantity: 10, pricePerItem: 2 },
+    { name: "snickers", quantity: 11, pricePerItem: 2 },
+    { name: "bananas", quantity: 15, pricePerItem: 1 },
+    { name: "pizzas", quantity: 24, pricePerItem: 8 },
+    { name: "bags of chips", quantity: 11, pricePerItem: 3 }
   ];
 
   // list of bought items
