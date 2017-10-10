@@ -4,7 +4,8 @@
 angular.module('ShoppingListCheckOff', [])
 .controller('ToBuyController', ToBuyController)
 .controller('AlreadyBoughtController', AlreadyBoughtController)
-.service('ShoppingListCheckOffService', ShoppingListCheckOffService);
+.service('ShoppingListCheckOffService', ShoppingListCheckOffService)
+.filter('monetize', MonetizeFilter);
 
 ToBuyController.$inject = ['ShoppingListCheckOffService'];
 function ToBuyController(ShoppingListCheckOffService) {
@@ -42,6 +43,12 @@ function ShoppingListCheckOffService() {
     service.toBuyItems.splice(itemIndex, 1);
   };
 
+}
+
+function MonetizeFilter() {
+  return function (input) {
+    return '$$$'+input+".00";
+  };
 }
 
 })();
