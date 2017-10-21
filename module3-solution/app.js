@@ -9,20 +9,30 @@ NarrowItDownController.$inject = ['MenuSearchService'];
 function NarrowItDownController(MenuSearchService) {
   var vm = this;
   vm.found = [];
+
   vm.getMatchedMenuItems = function(searchTerm) {
-    MenuSearchService.getMatchedMenuItems(searchTerm);
+    vm.found = MenuSearchService.getMatchedMenuItems(searchTerm);
+    console.log(vm.found);
   };
 }
 
-function MenuSearchService() {
+MenuSearchService.$inject = ['$http'];
+function MenuSearchService($http) {
   var service = this;
 
   service.getMatchedMenuItems = function(searchTerm) {
     // http request and return result after looping through errything
-    return $http().then(function (result) {
+    return $http({
+      url: "https://davids-restaurant.herokuapp.com/menu_items.json"
+    }).then(function (result) {
       var foundItems = [];
+      var menuItems = result.data.menu_items;
 
-
+      menuItems.forEach(function (menuItem) {
+        if (menuItem.description.includes(searchTerm)) {
+          foundItems.push(menuItem);
+        }
+      });
 
       return foundItems;
     });
