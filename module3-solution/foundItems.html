@@ -1,0 +1,12 @@
+<!-- Each item in the list should show
+the name of the menu item, its short_name, and the description.
+You should also provide a "Don't want this one!" button next to each item
+in the list to give the user the ability to remove an item from that list. -->
+<ul>
+  <pre>{{narrowItDown.found}}</pre>
+  <li ng-repeat="found in narrowItDown.found">
+    Blah Blah Blah
+    <button ng-click="narrowItDown.onRemove({index: $index});" class="btn btn-warning">Don't want this one!</button>
+  </li>
+</ul>
+<div class="error" ng-if="narrowItDown.found.length < 1">Nothing found</div>
