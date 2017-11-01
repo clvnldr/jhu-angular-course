@@ -15,8 +15,6 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     url: '/',
     templateUrl: 'src/menuapp/templates/home.template.html'
   });
-
-  
 }
 
 })();
