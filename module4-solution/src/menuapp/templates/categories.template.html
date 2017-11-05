@@ -1,0 +1,9 @@
+<h2 class="text-center">Menu Categories</h2>
+<ul class="list-group col-md-6 col-md-offset-3">
+  <a href="/" class="list-group-item" ng-repeat="category in categoriesCtrl.categories">
+    <h4 class="list-group-item-heading">{{category.name}}</h4>
+    <div class="list-group-item-text">
+      {{category.special_instructions}}
+    </div>
+  </a>
+</ul>
