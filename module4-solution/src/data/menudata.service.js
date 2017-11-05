@@ -22,7 +22,7 @@ function MenuDataService($http) {
       method: "GET",
       params: {category: categoryShortName}
     }).then(function (result) {
-      return result.data;
+      return result.data.menu_items;
     });
   };
 }

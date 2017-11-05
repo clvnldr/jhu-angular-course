@@ -1,0 +1,11 @@
+<h2 class="text-center">Menu Items</h2>
+<ul class="list-group col-md-6 col-md-offset-3">
+  <li class="list-group-item" ng-repeat="item in itemsCtrl.items">
+    <h4 class="list-group-item-heading">{{item.name}} {{}}</h4>
+    <div class="list-group-item-text">
+      {{item.description}}<br/>
+      Small Price: ${{item.price_small}}<br/>
+      Large Price: ${{item.price_large}}
+    </div>
+  </li>
+</ul>
