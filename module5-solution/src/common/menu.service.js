@@ -32,6 +32,10 @@ function MenuService($http, ApiPath) {
     service.userDetails = angular.copy(userDetails);
   }
 
+  service.getUserDetails = function() {
+    return service.userDetails;
+  }
+
   service.getFavoriteDish = function(menuItemNumber) {
     return $http.get(ApiPath + '/menu_items/' + menuItemNumber + '.json');
   }
