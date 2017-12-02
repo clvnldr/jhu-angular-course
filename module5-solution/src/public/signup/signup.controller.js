@@ -28,8 +28,8 @@ function SignUpController(MenuService) {
 
   }
 
-  vm.checkFavDishNum = function () {
-    MenuService.getFavoriteDish(vm.user.favDishNum).then(function(response) {
+  vm.checkFavDishNum = function (favDishNum) {
+    MenuService.getFavoriteDish(favDishNum).then(function(response) {
       vm.menuNumError = false;
     }, function(err) {
       vm.menuNumError = true;
