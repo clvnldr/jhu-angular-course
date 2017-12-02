@@ -2,17 +2,15 @@
   <h1>User Information</h1>
   <div class="row">
     <div ng-show="infoCtrl.isSignedUp">
-      <ul>
-        <li>{{infoCtrl.userDetails.firstName}} {{infoCtrl.userDetails.lastName}}</li>
-        <li>{{infoCtrl.userDetails.emailAddress}}</li>
-        <li>{{infoCtrl.userDetails.phoneNumber}}</li>
-        <li>{{infoCtrl.userDetails.favoriteDish.name}}</li>
-        <li>{{infoCtrl.userDetails.favoriteDish.description}}</li>
+      <ul class="list-group">
+        <li class="list-group-item">{{infoCtrl.userDetails.firstName}} {{infoCtrl.userDetails.lastName}}</li>
+        <li class="list-group-item">Email: {{infoCtrl.userDetails.emailAddress}}</li>
+        <li class="list-group-item">Phone #: {{infoCtrl.userDetails.phoneNumber}}</li>
+        <li class="list-group-item">Favorite Dish: {{infoCtrl.userDetails.favoriteDish.name}} - {{infoCtrl.userDetails.favoriteDish.description}}</li>
       </ul>
-      <img ng-src="{{infoCtrl.ApiPath}}/images/{{infoCtrl.userDetails.favoriteDish}}.jpg" />
+      <img ng-src="{{infoCtrl.ApiPath}}/images/{{infoCtrl.userDetails.favoriteDish.short_name}}.jpg" />
     </div>
     <div ng-hide="infoCtrl.isSignedUp">
       <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign Up Now!</a></p>
     </div>
   </div>
-</div>
